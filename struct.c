@@ -1,11 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
-struct database {
-	int id;			/* id */
-	int age; 		/* age */
-	float salary; 	/* salary */
-};
+#include "header.h"
 
 int main() {
 	struct database db;
