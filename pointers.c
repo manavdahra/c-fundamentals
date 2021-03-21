@@ -2,11 +2,12 @@
 
 int main() {
 	int x;
-	int *p;
+	int *ptr;
 
-	p = &x;
-	printf("Please enter a number: ");
+	ptr = &x;
+	printf("Enter the value of x\n");
 	scanf("%d", &x);
-	printf("%d\n", *p);
-	getchar();
+
+	printf("You entered: %d\n", *ptr);
+	return 0;
 }

@@ -1,13 +1,16 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-	char str[10];
-	int i = 0;
+	char *str;
+	printf("Enter the string:\n");
 	scanf("%s", str);
-	for (i = 0; i < 10; i++) {
+	int i;
+	for (i = 0; i < strlen(str); i++) {
 		if (str[i] == 'a') {
-			printf("you entered a!\n");
+			printf("You entered character a!\n");
+			break;
 		}
 	}
-	getchar();
+	return 0;
 }

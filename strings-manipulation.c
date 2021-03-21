@@ -1,43 +1,37 @@
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-void strip_newline(char *string, int size) {
-	for (int i = 0; i < size; i++) {
-		if (string[i] == '\n') {
-			string[i] = '\0';
+void strip_newline(char *str) {
+	int i;
+	for (i = 0; i < strlen(str); i++) {
+		if (str[i] == '\n') {
+			str[i] = '\0';
 			break;
 		}
 	}
-	return;
 }
 
 int main() {
-	char name[50];
-	char lastname[50];
-	char fullname[100];
+	char *firstname = malloc(256);
+	char *lastname = malloc(256);
+	char *fullname = malloc(256);
 
-	printf("Enter your name: \n");
-	fgets(name, 50, stdin);
-	strip_newline(name, 50);
+	printf("Enter your firstname:\n");
+	fgets(firstname, 128, stdin);
 
-	if (strcmp(name, "Manav") == 0) {
-		printf("That is my name too!\n");
-	} else {
-		printf("That is not my name.\n");
-	}
+	printf("Enter your lastname:\n");
+	fgets(lastname, 128, stdin);
 
-	printf("your name is %lu letters long\n", strlen(name));
-	printf("Enter your lastname: \n");
-	fgets(lastname, 50, stdin);
-	strip_newline(lastname, 50);
+	strip_newline(firstname);
+	strip_newline(lastname);
 
 	fullname[0] = '\0';
-	strcat(fullname, name);
+	strcat(fullname, firstname);
 	strcat(fullname, " ");
 	strcat(fullname, lastname);
 
-	printf("Your fullname is %s\n", fullname);
+	printf("Your fullname is: %s\n", fullname);
 	getchar();
-
 	return 0;
 }

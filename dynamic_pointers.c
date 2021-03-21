@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "header.h"
 
 int main() {
-	int *ptr = malloc(sizeof(*ptr));
-	printf("%p\n", ptr);
-	free(ptr);
-	printf("%p\n", ptr);
+	struct database *db = malloc(sizeof(*db));
+	printf("%p\n", db);
+	free(db);
+	db = NULL;
+	printf("%p\n", db);
 }
