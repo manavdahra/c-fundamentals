@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "header.h"
+#include "headers/employee.h"
 
 int main() {
-	struct database db;
+	struct employee db;
 
 	db.id = 1;
 	db.age = 30;

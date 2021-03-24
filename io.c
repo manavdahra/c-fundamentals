@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "header.h"
+#include "headers/employee.h"
 
 int main() {
 	char *text_file_path = "data/test.txt";
@@ -11,7 +11,7 @@ int main() {
 	char *bin_file_path = "data/test.bin";
 	fp = fopen(bin_file_path, "wb");
 
-	struct database write_db;
+	struct employee write_db;
 	write_db.id = 1;
 	write_db.age = 30;
 	write_db.salary = 15000;
@@ -21,7 +21,7 @@ int main() {
 	
 	fp = fopen(bin_file_path, "rb");
 	
-	struct database read_db;
+	struct employee read_db;
 	fread(&read_db, sizeof(read_db), 1, fp);
 	fclose(fp);
 
